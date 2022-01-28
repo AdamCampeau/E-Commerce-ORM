@@ -60,7 +60,19 @@ router.post('/', (req, res) => {
 
 router.put('/:id', (req, res) => {
   // update a category by its `id` value
-  
+  Category.update(req.body, {
+    where: {
+      id: req.params.id,
+    },
+  })
+  .then((categoryData) => {
+    if (!categoryData) {
+      res.status(404).json({
+        message: "ERROR 404: PAGE NOT FOUND"
+      })
+      return;
+    }
+  })
 });
 
 router.delete('/:id', (req, res) => {
