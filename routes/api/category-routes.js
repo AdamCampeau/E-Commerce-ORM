@@ -7,10 +7,7 @@ router.get('/', (req, res) => {
   // find all categories
   Category.findAll({
     // be sure to include its associated Products
-    include: {
-      model: Product,
-      attributes: ["id", "product_name", "price", "stock"],
-    },
+    include: [Product]
   })
 
     .then((categoryData) => res.json(categoryData))
@@ -85,11 +82,11 @@ router.delete('/:id', (req, res) => {
       id:req.params.id,
     },
   })
-  .then((categoryData)) => {
+  .then(categoryData => {
     if(!categoryData) {
       res.status(404).json({
         message: "ERROR 404: PAGE NOT FOUND"
-      });
+      })
       return;
     }
     res.json(categoryData);
@@ -99,5 +96,6 @@ router.delete('/:id', (req, res) => {
     res.status(500).json(err);
   });
 
+})
 
 module.exports = router;

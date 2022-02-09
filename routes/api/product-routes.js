@@ -8,46 +8,47 @@ router.get('/', (req, res) => {
   // find all products
   Product.findAll({
     include: [{
-  // be sure to include its associated Category and Tag data
-      model:Category,
-      attributes:['category_name'],
+      // be sure to include its associated Category and Tag data
+      model: Category,
+      attributes: ['category_name'],
     },
     {
       model: Tag,
-      attributes:['tag_name'],
+      attributes: ['tag_name'],
     },
-  ]
-})
-  .then((tagData) => res.json(tagData))
-  .catch((err)=> {
-    console.log(err);
-    res.status(400).json(err)
+    ]
   })
+    .then((tagData) => res.json(tagData))
+    .catch((err) => {
+      console.log(err);
+      res.status(400).json(err)
+    })
+})
 
 // get one product
 router.get('/:id', (req, res) => {
   // find a single product by its `id`
-  Product.findOne ({
+  Product.findOne({
     where: {
       id: req.params.id,
     },
-  // be sure to include its associated Category and Tag data
+    // be sure to include its associated Category and Tag data
     include: [
-    {
-      model:Category,
-      attributes:['category_name'],
-    },
-    {
-      model: Tag,
-      attributes:['tag_name'],
-    },
-  ]
-})
-  .then((tagData)=>res.json(tagData))
-  .catch((err)=> {
-    console.log(err)
-    res.status(400)json(err)
-  })  
+      {
+        model: Category,
+        attributes: ['category_name'],
+      },
+      {
+        model: Tag,
+        attributes: ['tag_name'],
+      },
+    ]
+  })
+    .then((tagData) => res.json(tagData))
+    .catch((err) => {
+      console.log(err)
+      res.status(400).json(err)
+    })
 });
 
 // create new product
@@ -97,11 +98,11 @@ router.put('/:id', (req, res) => {
     stock: req.body.stock,
     tagIds: req.body.tagIds,
   },
-  {
-    where: {
-      id: req.params.id,
-    },
-  })
+    {
+      where: {
+        id: req.params.id,
+      },
+    })
     .then((product) => {
       // find all associated tags from ProductTag
       return ProductTag.findAll({ where: { product_id: req.params.id } });
@@ -143,19 +144,19 @@ router.delete('/:id', (req, res) => {
       id: req.params.id,
     },
   })
-  .then((productData) => {
-    if(!productData) {
-      res.status(404).json({
-        message: "ERROR 404: PAGE NOT FOUND",
-      });
-      return;
-    }
-    res.json(productData);
-  })
-  .catch((err) => {
-    console.log(err);
-    res.status(500).json(err);
-  });
+    .then((productData) => {
+      if (!productData) {
+        res.status(404).json({
+          message: "ERROR 404: PAGE NOT FOUND",
+        });
+        return;
+      }
+      res.json(productData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 module.exports = router;
