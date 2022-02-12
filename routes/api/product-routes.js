@@ -61,9 +61,10 @@ router.post('/', (req, res) => {
       tagIds: [1, 2, 3, 4]
     }
   */
+    console.log("GIT GUD",Product)
 
-  Product.create(req.body)({
-    product_name: req.body.product.name,
+  Product.create({
+    product_name: req.body.product_name,
     price: req.body.price,
     stock: req.body.stock,
     tagIds: req.body.tagIds,

@@ -1,96 +1,94 @@
-# E-commerce Back End Starter Code
+# E-commerce-ORM Back End
 
-Employee-Tracker
-Table of Contents
-Description
+## Table of Contents
+--------------------------------------
+[Description](#Description)
 
-License
+[License](#License)
 
-Installation
+[Installation](#Installation)
 
-Demo
+[Demo](#Demo)
 
-Testing
+[Testing](#Testing)
 
-Issues
+[Issues](#Issues)
 
-Future Development
+[Future Development](#Future_Development)
 
-Contributors
+[Contributors](#Contributors)
 
-GitHub
+[GitHub](#GitHub)
 
-Contact
+[Contact](#Contact)
 
-Description
-I WANT to be able to view and manage the departments, roles, and employees in my company SO THAT I can organize and plan my business.
 
-MySql database, contains departments, employees, roles
+--------------------------------------
 
-License
+## Description
+
+AS A manager at an internet retail company
+I WANT a back end for my e-commerce website that uses the latest technologies
+SO THAT my company can compete with other e-commerce companies
+
+## License
+
 No license
 
-Installation
-* Install MySql2: 
-    
-    https://dev.mysql.com/doc/mysql-shell/8.0/en/mysql-shell-install.html
+## Installation
 
-* Type in terminal: 
+    * Install MySql2: 
+        
+        https://dev.mysql.com/doc/mysql-shell/8.0/en/mysql-shell-install.html
 
-    mysql -u root -p
+    * Install Sequelize: 
 
-*  Open a new terminal, and type: 
+        https://www.npmjs.com/package/sequelize
 
-    npm install inquirer
-Demo
-image
+    *  Install dotenv: 
 
-image
+       https://www.npmjs.com/package/dotenv
 
-image
+    * Install Insomnia
 
-Testing
+        https://insomnia.rest/download
+
+## Demo
+
+![image](https://user-images.githubusercontent.com/91493786/153719454-f6d78983-e256-4459-8525-9dac88ebd3df.png)
+
+![image](https://user-images.githubusercontent.com/91493786/153719478-f5fde5f0-2782-43ef-9453-ea6eaa46938e.png)
+
+
+
+## Testing
+
 npm start
 
-Issues
- view all deptartments
+    or
 
- view roles
+nodemon
 
- view employees
+Insomnia testing API
 
- add department
+## Issues
 
- add role
 
- add employee
+## Future_Development
 
- update employee
+Fix POST testing issue
 
- connection ends
-
-Future_Development
-Update employee managers.
-
-View employees by manager.
-
-View employees by department.
-
-Delete departments, roles, and employees.
-
-View the total utilized budget of a department—in other words, the combined salaries of all employees in that department.
-
-Contributors
+## Contributors
 Adam Campeau
 
-GitHub
-https://github.com/AdamCampeau
+## GitHub
+https://github.com/AdamCampeau/E-Commerce-ORM
 
-Contact
+## Contact
 acampeau3@hotmail.com
 
-ScreenCastify Link
-https://watch.screencastify.com/v/vDseO7h49v3R5mHDxiCD
+## ScreenCastify Link
+https://watch.screencastify.com/v/uwGHnt74rftJ0frLimFA
 
-GitHub URL
-https://adamcampeau.github.io/MySQL-Employee-Database/
+## GitHub URL
+https://adamcampeau.github.io/E-Commerce-ORM/
